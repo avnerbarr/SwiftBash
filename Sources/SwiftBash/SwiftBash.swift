@@ -1,13 +1,6 @@
 import Foundation
-public struct SwiftBash {
-    public private(set) var text = "Hello, World!"
 
-    public init() {
-    }
-}
-
-
-func shell(launchPath: String, arguments: [String]) throws -> String
+public func shell(launchPath: String, arguments: [String]) throws -> String
 {
     let task = Process()
     task.launchPath = launchPath
@@ -60,7 +53,7 @@ func which(command: String) async throws -> String {
     return try shell(launchPath: "/bin/bash", arguments: [ "-l", "-c", "which \(command)" ])
 }
 
-func bash(command: String, arguments: [String]) async throws -> String {
+public func bash(command: String, arguments: [String]) async throws -> String {
     let which = try await which(command: command)
     if !which.isEmpty {
         return try shell(launchPath: which, arguments: arguments)
