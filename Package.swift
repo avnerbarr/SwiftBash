@@ -5,7 +5,7 @@ import PackageDescription
 
 let package = Package(
     name: "SwiftBash",
-    platforms: [SupportedPlatform.macOS("13")],
+    platforms: [SupportedPlatform.macOS("12")],
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
